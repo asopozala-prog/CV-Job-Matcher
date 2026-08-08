@@ -1,0 +1,28 @@
+# Python environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Generated / temporary files
+workbench/**/output/
+workbench/**/*.pdf
+
+# Frontend dependencies and build output
+node_modules/
+.next/
+dist/
+
+# macOS
+.DS_Store
+
+# Local development / design resources
+workbench/
+schemas/
+backend/assets/
