@@ -20,6 +20,7 @@ STYLESHEET_LINK_RE = re.compile(
     r'<link\b[^>]*\brel=["\']stylesheet["\'][^>]*>',
     flags=re.IGNORECASE,
 )
+PROJECT_URL_RE = re.compile(r"https?://[^\s<>\"'\[\](){}]+")
 
 
 def _read_utf8(path: Path, label: str) -> str:
@@ -46,7 +47,7 @@ def _load_json(path: Path) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError("CV JSON must contain one top-level object.")
 
-    required_objects = ("candidate", "contact", "render_options")
+    required_objects = ("candidate", "contact")
     required_lists = (
         "experience",
         "education",
@@ -64,6 +65,19 @@ def _load_json(path: Path) -> dict[str, Any]:
     for key in required_lists:
         if not isinstance(data.get(key), list):
             raise ValueError(f"CV JSON field '{key}' must be a list.")
+
+    if "render_options" in data:
+        if not isinstance(data["render_options"], dict):
+            raise ValueError("CV JSON field 'render_options' must be an object.")
+    else:
+        contact = data["contact"]
+        data["render_options"] = {
+            "show_photo": True,
+            "show_phone": bool(contact.get("phone")),
+            "show_linkedin": bool(contact.get("linkedin_url")),
+            "show_portfolio": bool(contact.get("portfolio_url")),
+            "show_additional": bool(data["additional"]),
+        }
 
     return data
 
@@ -211,9 +225,60 @@ def _simple_item(prefix: str) -> Callable[[str, dict[str, Any]], str]:
                     items_text = _string(items)
             normalized["items"] = items_text
 
+        if prefix == "additional":
+            normalized.setdefault("label", normalized.get("type", ""))
+            normalized.setdefault("value", normalized.get("text", ""))
+
         return _replace_placeholders(block, {prefix: normalized})
 
     return render
+
+
+def _flatten_skills(skills: list[dict[str, Any]]) -> list[dict[str, str]]:
+    """Flatten grouped skill items into ordered keyword objects."""
+    flattened: list[dict[str, str]] = []
+
+    for skill_group in skills:
+        items = skill_group.get("items", [])
+        if not isinstance(items, list):
+            raise ValueError("Each skills 'items' field must be a list.")
+        flattened.extend({"keyword": _string(item)} for item in items)
+
+    return flattened
+
+
+def _highlight(additional: list[dict[str, Any]]) -> dict[str, str]:
+    """Map the first additional entry to the template highlight object."""
+    if not additional:
+        return {"text": ""}
+    first = additional[0]
+    return {"text": _string(first.get("text", ""))}
+
+
+def _project_item(
+    block: str,
+    project: dict[str, Any],
+) -> str:
+    """Normalize explicit or description-embedded project links."""
+    normalized = deepcopy(project)
+    normalized.setdefault("description", "")
+
+    if "link" not in normalized:
+        description = _string(normalized["description"])
+        match = PROJECT_URL_RE.search(description)
+        if match:
+            normalized["link"] = match.group(0)
+            normalized["description"] = (
+                description[:match.start()] + description[match.end():]
+            ).strip()
+            normalized.setdefault("link_label", "View project")
+        else:
+            normalized["link"] = ""
+            normalized.setdefault("link_label", "")
+    else:
+        normalized.setdefault("link_label", "")
+
+    return _replace_placeholders(block, {"project": normalized})
 
 
 def _remove_element_by_class(source: str, class_name: str) -> str:
@@ -361,6 +426,7 @@ def render_json_to_html(
     )
 
     data = _load_json(source_path)
+    data["highlight"] = _highlight(data["additional"])
     template_html = _read_utf8(selected_template, "HTML template")
     css_text = _read_utf8(selected_css, "CSS template")
 
@@ -380,8 +446,8 @@ def render_json_to_html(
     )
     template_html = _expand_block(
         template_html,
-        "SKILL_GROUP",
-        data["skills"],
+        "SKILL_ITEM",
+        _flatten_skills(data["skills"]),
         _simple_item("skill"),
     )
     template_html = _expand_block(
@@ -400,15 +466,8 @@ def render_json_to_html(
         template_html,
         "PROJECT_ITEM",
         data["projects"],
-        _simple_item("project"),
+        _project_item,
     )
-    template_html = _expand_block(
-        template_html,
-        "ADDITIONAL_ITEM",
-        data["additional"],
-        _simple_item("additional"),
-    )
-
     template_html = _apply_render_options(template_html, data)
     template_html = _replace_placeholders(template_html, data)
     template_html = _inline_css(template_html, css_text)

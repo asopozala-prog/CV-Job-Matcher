@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" data-kiron-role="kiron_verdict" data-ui-role="final_verdict" data-label="Verdict">
+  <ellipse cx="64" cy="122" rx="45" ry="4" fill="#EADBC7" stroke="none" opacity="0.72" data-kiron-id="ground_shadow" />
+  <path d="M42 84 C27 84 16 91 8 98 C18 98 28 96 40 91 C49 88 54 87 60 88" fill="#78C8BE" stroke="#245E68" stroke-width="2.0" data-kiron-id="tail" />
+  <path d="M37 78 C45 66 59 61 76 63 C91 65 101 73 103 86 C105 98 96 106 82 108 L55 108 C42 108 32 101 31 91 C30 86 32 82 37 78 Z" fill="#78C8BE" stroke="#245E68" stroke-width="2.0" data-kiron-id="body" />
+  <path d="M92 92 C96 92 99 95 99 99 L100 115 C100 119 97 121 93 121 L89 121 C86 121 84 119 85 116 L86 100 C86 96 88 93 92 92 Z" fill="#58AFA8" stroke="#245E68" stroke-width="1.8" data-kiron-id="front_leg_far" />
+  <path d="M61 94 C65 94 68 96 68 100 L68 114 C68 118 65 120 61 120 L57 120 C54 120 52 118 53 115 L54 101 C54 97 57 95 61 94 Z" fill="#58AFA8" stroke="#245E68" stroke-width="1.8" data-kiron-id="rear_leg_far" />
+  <path d="M68 71 C68 57 66 43 67 29 C68 16 74 8 85 8 C95 8 101 14 101 22 C101 30 95 35 87 36 C83 37 81 41 81 48 L82 72 Z" fill="#78C8BE" stroke="#245E68" stroke-width="2.0" data-kiron-id="neck" />
+  <path d="M79 94 C82 94 85 96 85 100 L84 115 C84 119 81 121 77 121 L72 121 C69 121 67 119 68 116 L70 101 C70 97 74 94 79 94 Z" fill="#78C8BE" stroke="#245E68" stroke-width="2.0" data-kiron-id="front_leg_near" />
+  <path d="M49 93 C53 93 56 96 56 100 L55 115 C55 119 52 121 48 121 L43 121 C40 121 38 119 39 116 L40 101 C40 97 44 94 49 93 Z" fill="#78C8BE" stroke="#245E68" stroke-width="2.0" data-kiron-id="rear_leg_near" />
+  <path d="M82 9 C92 5 105 8 110 16 C115 24 111 34 102 37 C94 40 83 37 79 30 C75 23 76 14 82 9 Z" fill="#78C8BE" stroke="#245E68" stroke-width="2.0" data-kiron-id="head" />
+  <path d="M96 25 C101 23 106 23 110 25 C109 31 105 34 100 35 C96 35 93 33 92 30 C92 28 93 26 96 25 Z" fill="#A8DDD5" stroke="none" data-kiron-id="muzzle_highlight" />
+  <ellipse cx="74" cy="39" rx="2.2" ry="3.0" fill="#4F9E98" stroke="none" transform="rotate(-12 74 39)" data-kiron-id="neck_spot_1" />
+  <ellipse cx="74" cy="49" rx="2.4" ry="3.3" fill="#4F9E98" stroke="none" transform="rotate(-10 74 49)" data-kiron-id="neck_spot_2" />
+  <ellipse cx="75" cy="59" rx="2.1" ry="2.9" fill="#4F9E98" stroke="none" transform="rotate(-8 75 59)" data-kiron-id="neck_spot_3" />
+  <ellipse cx="55" cy="78" rx="4.0" ry="2.3" fill="#4F9E98" stroke="none" transform="rotate(-10 55 78)" data-kiron-id="body_spot_1" />
+  <ellipse cx="66" cy="74" rx="4.2" ry="2.2" fill="#4F9E98" stroke="none" transform="rotate(8 66 74)" data-kiron-id="body_spot_2" />
+  <ellipse cx="77" cy="76" rx="3.5" ry="2.0" fill="#4F9E98" stroke="none" transform="rotate(16 77 76)" data-kiron-id="body_spot_3" />
+  <circle cx="93" cy="18" r="2.2" fill="#173A4A" stroke="none" data-kiron-id="eye" />
+  <circle cx="93.7" cy="17.2" r="0.65" fill="#FFFFFF" stroke="none" data-kiron-id="eye_highlight" />
+  <circle cx="87" cy="27" r="3.0" fill="#F59B8B" stroke="none" opacity="0.92" data-kiron-id="cheek" />
+  <path d="M96 29 C100 31 104 31 107 28" fill="none" stroke="#245E68" stroke-width="1.7" data-kiron-id="mouth" />
+  <circle cx="106" cy="22" r="0.9" fill="#245E68" stroke="none" data-kiron-id="nostril" />
+  <path d="M108 48 L120 53 V62 C120 70 115 76 108 80 C101 76 96 70 96 62 V53 Z" fill="#2CA67C" stroke="#176D57" stroke-width="2.0" data-kiron-id="prop_shield_check_1" />
+  <path d="M102 63 L106 67 L114 58" fill="none" stroke="#FFFFFF" stroke-width="2.7" data-kiron-id="prop_shield_check_2" />
+</svg>

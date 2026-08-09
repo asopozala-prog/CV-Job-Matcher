@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiron Evaluation</title>
+  <link rel="stylesheet" href="kiron_evaluation_pdf.css">
+</head>
+<body>
+  <main class="pdf-page">
+
+    <header class="page-header">
+      <div class="header-icon">
+        <img src="{{assets.kiron_analysis}}" alt="" aria-hidden="true">
+      </div>
+      <div class="header-copy">
+        <h1>KIRON EVALUATION</h1>
+      </div>
+    </header>
+
+    <section class="top-grid">
+      <article class="card recommendation-card">
+        <div class="card-visual large-visual">
+          <img src="{{assets.recommendation_icon}}" alt="" aria-hidden="true">
+        </div>
+        <div class="card-copy">
+          <p class="label label-recommendation">Overall recommendation</p>
+          <p class="recommendation-value recommendation-{{overall_recommendation_slug}}">
+            {{overall_recommendation}}
+          </p>
+        </div>
+      </article>
+
+      <article class="card probability-card">
+        <div class="card-copy probability-copy">
+          <p class="label">HR screening probability</p>
+          <p class="probability-value">{{hr_screening_probability}}%</p>
+        </div>
+        <div class="card-visual probability-visual">
+          <img src="{{assets.kiron_probability}}" alt="" aria-hidden="true">
+        </div>
+      </article>
+    </section>
+
+    <section class="card verdict-card">
+      <div class="card-visual verdict-visual">
+        <img src="{{assets.kiron_personal_profile}}" alt="" aria-hidden="true">
+      </div>
+      <div class="card-copy">
+        <p class="label label-verdict">Final verdict</p>
+        <p class="body-copy verdict-copy">{{final_verdict}}</p>
+      </div>
+    </section>
+
+    <section class="card reasoning-card">
+      <div class="card-visual reasoning-visual">
+        <img src="{{assets.kiron_analysis}}" alt="" aria-hidden="true">
+      </div>
+      <div class="card-copy">
+        <p class="label label-reasoning">Reasoning</p>
+        <p class="body-copy">{{reasoning}}</p>
+      </div>
+    </section>
+
+    <section class="middle-grid">
+      <article class="card good-card">
+        <div class="card-visual middle-visual">
+          <img src="{{assets.kiron_good_match}}" alt="" aria-hidden="true">
+        </div>
+        <div class="card-copy">
+          <p class="label label-good">Good match</p>
+          <p class="body-copy">{{good_match}}</p>
+        </div>
+      </article>
+
+      <article class="card gaps-card">
+        <div class="card-visual middle-visual">
+          <img src="{{assets.kiron_gaps}}" alt="" aria-hidden="true">
+        </div>
+        <div class="card-copy">
+          <p class="label label-gaps">Gaps</p>
+          <p class="body-copy">{{gaps}}</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="card support-card">
+      <div class="card-visual support-visual">
+        <img src="{{assets.kiron_support}}" alt="" aria-hidden="true">
+      </div>
+      <div class="card-copy">
+        <p class="label label-support">Kiron support</p>
+        <p class="body-copy">{{kiron_support}}</p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

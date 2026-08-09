@@ -1,0 +1,160 @@
+{
+  "library": {
+    "name": "Kiron Character Icon",
+    "version": "1.0.0",
+    "description": "Canonical machine-readable Kiron sauropod character for deterministic SVG rendering.",
+    "coordinate_system": {
+      "viewBox": "0 0 128 128",
+      "origin": "top-left",
+      "units": "SVG user units"
+    },
+    "rendering": {
+      "format": "structured_svg_geometry",
+      "background": "transparent",
+      "preserve_aspect_ratio": "xMidYMid meet",
+      "recommended_sizes_px": [24, 32, 48, 64, 96, 128],
+      "small_icon_min_px": 32
+    }
+  },
+  "character_rules": {
+    "species": "friendly long-neck sauropod",
+    "identity": "Kiron",
+    "gender_presentation": "female",
+    "silhouette": {
+      "head": "small rounded head",
+      "neck": "long gently curved upright neck",
+      "body": "soft rounded horizontal body",
+      "legs": "four short sturdy legs",
+      "tail": "long tapered tail",
+      "stance": "stable and calm"
+    },
+    "must_preserve": [
+      "long-neck sauropod silhouette",
+      "small rounded head",
+      "four-legged body plan",
+      "long tapered tail",
+      "soft teal body palette",
+      "dark teal outline",
+      "small dark eyes",
+      "subtle coral cheek",
+      "gentle non-childish expression"
+    ],
+    "must_avoid": [
+      "T-rex silhouette",
+      "upright theropod stance",
+      "tiny T-rex arms",
+      "dragon wings",
+      "horns",
+      "spikes along the entire back",
+      "species drift between variants",
+      "exaggerated baby proportions"
+    ]
+  },
+  "palette": {
+    "body_fill": "#78C8BE",
+    "body_shadow": "#58AFA8",
+    "body_highlight": "#A8DDD5",
+    "outline": "#245E68",
+    "spots": "#4F9E98",
+    "eye": "#173A4A",
+    "cheek": "#F59B8B",
+    "mouth": "#245E68",
+    "ground": "#EADBC7",
+    "accent_navy": "#0B2F63",
+    "accent_blue": "#0F56A6",
+    "accent_green": "#2CA67C",
+    "accent_yellow": "#F4BE45",
+    "accent_orange": "#F39A35",
+    "accent_lilac": "#A98BE3",
+    "accent_red": "#F47F7F",
+    "white": "#FFFFFF"
+  },
+  "default_style": {
+    "stroke": "#245E68",
+    "stroke_width": 2.0,
+    "stroke_linecap": "round",
+    "stroke_linejoin": "round",
+    "fill": "none"
+  },
+  "base_character": {
+    "id": "kiron_base_standing",
+    "name": "Kiron — Neutral Standing",
+    "ui_role": "canonical_character",
+    "viewBox": "0 0 128 128",
+    "elements": [
+      {"id":"ground_shadow","type":"ellipse","cx":64,"cy":122,"rx":45,"ry":4,"fill":"#EADBC7","stroke":"none","opacity":0.72},
+      {"id":"tail","type":"path","d":"M42 84 C27 84 16 91 8 98 C18 98 28 96 40 91 C49 88 54 87 60 88","fill":"#78C8BE","stroke":"#245E68","stroke_width":2.0},
+      {"id":"body","type":"path","d":"M37 78 C45 66 59 61 76 63 C91 65 101 73 103 86 C105 98 96 106 82 108 L55 108 C42 108 32 101 31 91 C30 86 32 82 37 78 Z","fill":"#78C8BE","stroke":"#245E68","stroke_width":2.0},
+      {"id":"front_leg_far","type":"path","d":"M92 92 C96 92 99 95 99 99 L100 115 C100 119 97 121 93 121 L89 121 C86 121 84 119 85 116 L86 100 C86 96 88 93 92 92 Z","fill":"#58AFA8","stroke":"#245E68","stroke_width":1.8},
+      {"id":"rear_leg_far","type":"path","d":"M61 94 C65 94 68 96 68 100 L68 114 C68 118 65 120 61 120 L57 120 C54 120 52 118 53 115 L54 101 C54 97 57 95 61 94 Z","fill":"#58AFA8","stroke":"#245E68","stroke_width":1.8},
+      {"id":"neck","type":"path","d":"M68 71 C68 57 66 43 67 29 C68 16 74 8 85 8 C95 8 101 14 101 22 C101 30 95 35 87 36 C83 37 81 41 81 48 L82 72 Z","fill":"#78C8BE","stroke":"#245E68","stroke_width":2.0},
+      {"id":"front_leg_near","type":"path","d":"M79 94 C82 94 85 96 85 100 L84 115 C84 119 81 121 77 121 L72 121 C69 121 67 119 68 116 L70 101 C70 97 74 94 79 94 Z","fill":"#78C8BE","stroke":"#245E68","stroke_width":2.0},
+      {"id":"rear_leg_near","type":"path","d":"M49 93 C53 93 56 96 56 100 L55 115 C55 119 52 121 48 121 L43 121 C40 121 38 119 39 116 L40 101 C40 97 44 94 49 93 Z","fill":"#78C8BE","stroke":"#245E68","stroke_width":2.0},
+      {"id":"head","type":"path","d":"M82 9 C92 5 105 8 110 16 C115 24 111 34 102 37 C94 40 83 37 79 30 C75 23 76 14 82 9 Z","fill":"#78C8BE","stroke":"#245E68","stroke_width":2.0},
+      {"id":"muzzle_highlight","type":"path","d":"M96 25 C101 23 106 23 110 25 C109 31 105 34 100 35 C96 35 93 33 92 30 C92 28 93 26 96 25 Z","fill":"#A8DDD5","stroke":"none"},
+      {"id":"neck_spot_1","type":"ellipse","cx":74,"cy":39,"rx":2.2,"ry":3.0,"fill":"#4F9E98","stroke":"none","transform":"rotate(-12 74 39)"},
+      {"id":"neck_spot_2","type":"ellipse","cx":74,"cy":49,"rx":2.4,"ry":3.3,"fill":"#4F9E98","stroke":"none","transform":"rotate(-10 74 49)"},
+      {"id":"neck_spot_3","type":"ellipse","cx":75,"cy":59,"rx":2.1,"ry":2.9,"fill":"#4F9E98","stroke":"none","transform":"rotate(-8 75 59)"},
+      {"id":"body_spot_1","type":"ellipse","cx":55,"cy":78,"rx":4.0,"ry":2.3,"fill":"#4F9E98","stroke":"none","transform":"rotate(-10 55 78)"},
+      {"id":"body_spot_2","type":"ellipse","cx":66,"cy":74,"rx":4.2,"ry":2.2,"fill":"#4F9E98","stroke":"none","transform":"rotate(8 66 74)"},
+      {"id":"body_spot_3","type":"ellipse","cx":77,"cy":76,"rx":3.5,"ry":2.0,"fill":"#4F9E98","stroke":"none","transform":"rotate(16 77 76)"},
+      {"id":"eye","type":"circle","cx":93,"cy":18,"r":2.2,"fill":"#173A4A","stroke":"none"},
+      {"id":"eye_highlight","type":"circle","cx":93.7,"cy":17.2,"r":0.65,"fill":"#FFFFFF","stroke":"none"},
+      {"id":"cheek","type":"circle","cx":87,"cy":27,"r":3.0,"fill":"#F59B8B","stroke":"none","opacity":0.92},
+      {"id":"mouth","type":"path","d":"M96 29 C100 31 104 31 107 28","fill":"none","stroke":"#245E68","stroke_width":1.7},
+      {"id":"nostril","type":"circle","cx":106,"cy":22,"r":0.9,"fill":"#245E68","stroke":"none"}
+    ]
+  },
+  "expression_variants": {
+    "friendly": {"description":"Neutral gentle smile and open attentive eye.","overrides":{}},
+    "thinking": {"description":"Focused eye, softer mouth, head slightly forward.","overrides":{"eye":{"cy":19,"r":2.0},"mouth":{"d":"M97 30 C100 30 103 30 105 29"},"head_transform":"rotate(-4 92 24)"}},
+    "happy": {"description":"Closed happy eye and wider smile.","overrides":{"eye":{"type":"path","d":"M90 18 C92 16 95 16 97 18","fill":"none","stroke":"#173A4A","stroke_width":1.8},"eye_highlight":{"visible":false},"mouth":{"d":"M95 28 C99 33 105 33 109 27"}}},
+    "encouraging": {"description":"Warm attentive look with a slightly lifted head.","overrides":{"head_transform":"rotate(3 92 24)","mouth":{"d":"M96 29 C100 32 105 31 108 27"}}},
+    "curious": {"description":"Raised eye direction and slight head tilt.","overrides":{"head_transform":"rotate(-7 92 24)","eye":{"cx":94,"cy":17},"mouth":{"d":"M97 30 C100 30 103 29 105 28"}}},
+    "focused": {"description":"Calm concentrated expression suitable for analysis UI.","overrides":{"eye":{"cx":94,"cy":19},"mouth":{"d":"M97 30 C100 30 102 30 104 29"},"cheek":{"opacity":0.65}}},
+    "proud": {"description":"Quiet confidence, chin slightly lifted.","overrides":{"head_transform":"rotate(5 92 24)","mouth":{"d":"M96 28 C100 31 105 30 108 26"}}},
+    "supportive": {"description":"Soft closed-eye smile for supportive moments.","overrides":{"eye":{"type":"path","d":"M90 18 C92 16.5 95 16.5 97 18","fill":"none","stroke":"#173A4A","stroke_width":1.6},"eye_highlight":{"visible":false},"mouth":{"d":"M96 29 C100 32 105 31 108 27"},"cheek":{"r":3.4,"opacity":1.0}}}
+  },
+  "pose_variants": {
+    "standing": {"description":"Canonical full-body standing pose.","base":"kiron_base_standing"},
+    "walking": {"description":"Subtle walking pose; preserve body and neck proportions.","instructions":{"front_leg_near_transform":"rotate(-10 76 98)","front_leg_far_transform":"rotate(10 92 98)","rear_leg_near_transform":"rotate(8 48 99)","rear_leg_far_transform":"rotate(-8 61 99)","body_transform":"translate(0 -1)"}},
+    "sitting": {"description":"Calm sitting pose with lowered body and folded rear legs.","instructions":{"body_transform":"translate(0 7)","neck_transform":"translate(0 3)","head_transform":"translate(0 3)","rear_legs_mode":"folded","front_legs_mode":"upright_short"}},
+    "cheering": {"description":"Positive but restrained celebratory pose.","instructions":{"body_transform":"translate(0 5)","front_legs_mode":"raised","head_transform":"rotate(3 92 24)","expression":"happy"}}
+  },
+  "ui_icon_roles": {
+    "kiron_analysis": {"expression":"focused","pose":"sitting","prop":"magnifying_glass","ui_role":"reasoning","label":"Analysis"},
+    "kiron_good_match": {"expression":"proud","pose":"standing","prop":"check_star","ui_role":"good_match","label":"Good Match"},
+    "kiron_gaps": {"expression":"thinking","pose":"sitting","prop":"puzzle_piece","ui_role":"gaps","label":"Gaps"},
+    "kiron_support": {"expression":"supportive","pose":"sitting","prop":"heart","ui_role":"kiron_support","label":"Support"},
+    "kiron_recommendation": {"expression":"encouraging","pose":"standing","prop":"direction_sign","ui_role":"overall_recommendation","label":"Recommendation"},
+    "kiron_verdict": {"expression":"friendly","pose":"standing","prop":"shield_check","ui_role":"final_verdict","label":"Verdict"},
+    "kiron_probability": {"expression":"encouraging","pose":"standing","prop":"rising_chart","ui_role":"hr_screening_probability","label":"Probability"}
+  },
+  "prop_library": {
+    "magnifying_glass": {"elements":[{"type":"circle","cx":101,"cy":62,"r":12,"fill":"#FFFFFF","stroke":"#0F56A6","stroke_width":3.0},{"type":"path","d":"M110 71 L120 82","fill":"none","stroke":"#0F56A6","stroke_width":4.0}]},
+    "check_star": {"elements":[{"type":"circle","cx":105,"cy":61,"r":12,"fill":"#EAF7F2","stroke":"#2CA67C","stroke_width":2.0},{"type":"path","d":"M99 61 L103 65 L111 56","fill":"none","stroke":"#2CA67C","stroke_width":3.0}]},
+    "puzzle_piece": {"elements":[{"type":"path","d":"M95 52 H104 C102 47 106 44 110 46 C114 48 114 53 110 55 H118 V64 H111 C114 69 110 73 106 71 C103 70 102 67 104 64 H95 Z","fill":"#A98BE3","stroke":"#5D4A92","stroke_width":2.0}]},
+    "heart": {"elements":[{"type":"path","d":"M104 66 C96 60 95 53 100 50 C104 47 108 50 110 54 C112 50 116 47 120 50 C125 53 124 60 116 66 L110 71 Z","fill":"#F47F7F","stroke":"#C86060","stroke_width":1.8}]},
+    "direction_sign": {"elements":[{"type":"path","d":"M102 48 V78","fill":"none","stroke":"#6A5949","stroke_width":3.0},{"type":"path","d":"M94 53 H116 L112 59 H94 Z","fill":"#F4BE45","stroke":"#6A5949","stroke_width":1.7},{"type":"path","d":"M94 63 H116 L98 70 H94 Z","fill":"#78C8BE","stroke":"#6A5949","stroke_width":1.7}]},
+    "shield_check": {"elements":[{"type":"path","d":"M108 48 L120 53 V62 C120 70 115 76 108 80 C101 76 96 70 96 62 V53 Z","fill":"#2CA67C","stroke":"#176D57","stroke_width":2.0},{"type":"path","d":"M102 63 L106 67 L114 58","fill":"none","stroke":"#FFFFFF","stroke_width":2.7}]},
+    "rising_chart": {"elements":[{"type":"rect","x":93,"y":68,"width":6,"height":12,"rx":1,"fill":"#0B2F63","stroke":"none"},{"type":"rect","x":103,"y":60,"width":6,"height":20,"rx":1,"fill":"#0F56A6","stroke":"none"},{"type":"rect","x":113,"y":51,"width":6,"height":29,"rx":1,"fill":"#78C8BE","stroke":"none"},{"type":"path","d":"M92 57 C100 55 107 50 116 42","fill":"none","stroke":"#2CA67C","stroke_width":2.4},{"type":"path","d":"M111 42 H117 V48","fill":"none","stroke":"#2CA67C","stroke_width":2.4}]}
+  },
+  "export_rules": {
+    "inline_svg": {
+      "svg_attributes": {
+        "xmlns": "http://www.w3.org/2000/svg",
+        "viewBox": "0 0 128 128",
+        "aria-hidden": "true",
+        "focusable": "false",
+        "preserveAspectRatio": "xMidYMid meet"
+      },
+      "css_strategy": "Use explicit fills for Kiron body identity colors; allow UI props/accent strokes to be theme-overridden only when desired.",
+      "decorative_only": true
+    },
+    "python_renderer": {
+      "element_order": ["ground_shadow","tail","body","far_legs","neck","near_legs","head","muzzle_highlight","spots","face","prop"],
+      "unknown_element_behavior": "skip_and_warn",
+      "unknown_variant_behavior": "fallback_to_friendly_standing"
+    }
+  }
+}

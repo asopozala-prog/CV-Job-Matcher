@@ -24,5 +24,6 @@ dist/
 
 # Local development / design resources
 workbench/
-schemas/
-backend/assets/
+
+# Runtime temporary job files
+backend/temp/
