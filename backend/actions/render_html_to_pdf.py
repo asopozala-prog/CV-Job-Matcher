@@ -57,7 +57,7 @@ def _render_via_service(
     service_url: str,
 ) -> None:
     """Send self-contained HTML to the private PDF service."""
-    endpoint = urljoin(service_url.rstrip("/") + "/", "render")
+    endpoint = urljoin(service_url.rstrip("/") + "/", "api/render")
     payload = json.dumps({"html": _make_html_portable(html)}).encode("utf-8")
 
     request = Request(
