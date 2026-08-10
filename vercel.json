@@ -6,7 +6,7 @@
       "framework": "nextjs"
     },
     "backend": {
-      "root": "backend",
+      "root": ".",
       "framework": "fastapi"
     }
   },
