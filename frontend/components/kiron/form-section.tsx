@@ -11,7 +11,7 @@ const JOB_OFFER_MAX = 30_000
 const CAREER_MATERIAL_MAX = 60_000
 const API_BASE_URL =
   process.env.NODE_ENV === 'production'
-    ? '/api/backend'
+    ? 'https://cv-job-matcher-seven.vercel.app'
     : 'http://127.0.0.1:8000'
 
 type JobResponse = {
