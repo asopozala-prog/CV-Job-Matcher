@@ -27,3 +27,11 @@ workbench/
 
 # Runtime temporary job files
 backend/temp/
+
+# Local schema/design working files
+schemas/DG_CV.md
+schemas/UI_plan.md
+schemas/graphic_design.md
+schemas/kiron_cv_schema.md
+schemas/product_design.md
+schemas/web_content.md
