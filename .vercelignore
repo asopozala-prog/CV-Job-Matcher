@@ -1,0 +1,7 @@
+frontend/
+pdf-service/
+tests/
+workbench/
+.venv/
+.env
+README.md
