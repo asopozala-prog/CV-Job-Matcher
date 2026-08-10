@@ -3,8 +3,7 @@
   "services": {
     "frontend": {
       "root": "frontend",
-      "framework": "nextjs",
-      "routePrefix": "/"
+      "framework": "nextjs"
     },
     "backend": {
       "root": "backend",
