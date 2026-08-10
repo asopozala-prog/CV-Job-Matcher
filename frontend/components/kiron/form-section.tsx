@@ -9,7 +9,10 @@ import { Reveal } from './reveal'
 
 const JOB_OFFER_MAX = 30_000
 const CAREER_MATERIAL_MAX = 60_000
-const API_BASE_URL = 'http://127.0.0.1:8000'
+const API_BASE_URL =
+  process.env.NODE_ENV === 'production'
+    ? '/api/backend'
+    : 'http://127.0.0.1:8000'
 
 type JobResponse = {
   status: string

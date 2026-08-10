@@ -8,11 +8,12 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import uuid
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-TEMP_ROOT = PROJECT_ROOT / "backend" / "temp"
+TEMP_ROOT = Path(tempfile.gettempdir()) / "kiron-cv-job-matcher"
 
 
 def _run(command: list[str]) -> None:

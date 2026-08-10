@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 import re
 import shutil
 import uuid
@@ -12,11 +11,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, StrictBool, field_validator
 
-from backend.pipelines.run_cv_job import run_cv_job
+from backend.pipelines.run_cv_job import TEMP_ROOT, run_cv_job
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-TEMP_ROOT = PROJECT_ROOT / "backend" / "temp"
 JOB_OFFER_MAX_CHARS = 30_000
 CANDIDATE_MATERIAL_MAX_CHARS = 60_000
 EMAIL_PATTERN = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
