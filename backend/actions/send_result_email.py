@@ -83,6 +83,7 @@ Attached you will find:
 
 - your job-match evaluation
 - your targeted CV
+If you'd like to use your own AI model or API for stronger reasoning and greater privacy, add an editing and review layer before finalizing your documents, create your own CV layout, or build a local intelligence system to manage your CV materials, feel free to reply to this email to reach the developer.
 
 Thank you for trying Kiron.
 
