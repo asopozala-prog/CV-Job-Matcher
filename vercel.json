@@ -7,7 +7,19 @@
     },
     "backend": {
       "root": ".",
-      "framework": "fastapi"
+      "framework": "fastapi",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "pdf",
+          "format": "url",
+          "env": "PDF_SERVICE_URL"
+        }
+      ]
+    },
+    "pdf": {
+      "root": "pdf-service",
+      "framework": "express"
     }
   },
   "rewrites": [
