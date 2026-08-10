@@ -1,28 +1,27 @@
-// Render self-contained HTML into PDF through Kiron's shared Chromium renderer.
+// Vercel API endpoint for Kiron's PDF rendering service.
 
 import { renderPdf } from '../render.js'
 
 export const maxDuration = 60
 
-export default {
-  async fetch(request) {
-    try {
-      const body = await request.json()
-      const pdf = await renderPdf(body?.html)
+export default async function handler(request, response) {
+  if (request.method !== 'POST') {
+    return response.status(405).json({ detail: 'Method not allowed.' })
+  }
 
-      return new Response(pdf, {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/pdf',
-        },
-      })
-    } catch (error) {
-      console.error('PDF render failed', error)
+  try {
+    const { html } = request.body ?? {}
 
-      return Response.json(
-        { detail: 'PDF rendering failed.' },
-        { status: 500 },
-      )
+    if (!html || typeof html !== 'string') {
+      return response.status(400).json({ detail: 'html is required.' })
     }
-  },
+
+    const pdf = await renderPdf(html)
+
+    response.setHeader('Content-Type', 'application/pdf')
+    return response.status(200).send(pdf)
+  } catch (error) {
+    console.error('PDF render failed:', error)
+    return response.status(500).json({ detail: 'PDF rendering failed.' })
+  }
 }
