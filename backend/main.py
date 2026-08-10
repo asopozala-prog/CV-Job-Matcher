@@ -23,7 +23,11 @@ logger = logging.getLogger(__name__)
 app = FastAPI(title="Kiron CV Job API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://cv-job-matcher-gwls.vercel.app",
+    ],
+    allow_origin_regex=r"https://kiron-[a-z0-9-]+-hormus\.vercel\.app",
     allow_credentials=False,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type"],
