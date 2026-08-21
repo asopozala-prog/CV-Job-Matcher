@@ -73,8 +73,9 @@ export default function WhyKironPage() {
                 </p>
 
                 <p>
-                  Kiron CV is not a commercial product. It is a free tool — built
-                  from gratitude, and offered back.
+                  Kiron CV is an independent project, not affiliated with or run by
+                  Kiron Education gGmbH. It is not a commercial product. It is a
+                  free tool — built from gratitude, and offered back.
                 </p>
               </div>
 
